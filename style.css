@@ -1,0 +1,447 @@
+/* * dentoes universal i.e these settings will be applied everywhere */
+@font-face{
+    font-family: neu;
+    src: url(./NeueHaasDisplayMediu.ttf);
+}
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family: "Neue Haas Grotesk Display Pro ";
+}
+
+html, body{
+    height:100%;
+    width:100%;
+}
+
+/* ------------------- You should write the above code whenever u start for css file --------------------- */
+
+/* Now we start working on Page 1 */
+#page1{
+    /* height:100%;
+    width:100%; 
+
+    since we have to use locomotive js so we cant give height & width to main div , isliye we have used vh so that hum child jo ki page 1 h usko use kr sake vh-viewport height 
+
+    we gave position relative because its good approach isse child control m rhenge 
+    
+    flex- se item line m ajayenge 
+    */
+
+
+    position: relative;
+    min-height:100vh;
+    width:100%;
+    background-color: #efeae3;
+    padding:0 2vw;
+}
+
+nav{
+    padding: 2vw 0vw;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    /* background-color: red; */
+
+    
+}
+.nav-part2{
+    display: flex;
+    align-items: center;
+    gap:1vw;
+    
+}
+.nav-part2 h4{
+    padding: 10px 20px;
+    border:1px solid rgb(15, 1, 1);
+    border-radius: 50px;
+    font-weight: 500;
+    color:rgba(0, 0, 0, 0.789);
+    font-size:18px;
+    position: relative;
+    transition: all ease 0.4;
+    overflow: hidden;
+}
+
+/* we use after and before to create highlight on touching work studio and contact that black animation  */
+
+/* 
+parent ko position relative aur child ko absolute to have more control  */
+
+.nav-part2 h4::after{
+    content:"";
+    position:absolute;
+    height: 100%;
+    width:100%;
+    background-color: black;
+    left:0;
+    bottom:-100%;
+    border-radius: 50%;
+    transition: all ease 0.4;
+}
+
+.nav-part2 h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+.nav-part2 h4 a{
+    /* to remove under line text decoration  */
+    text-decoration: none;  
+    color:black;
+
+    /* z-index is the CSS property that controls the stacking order of overlapping elements on a page. An element with a higher z-index value will appear in front of an element with a lower z-index value. */
+
+    z-index: 9;
+    position: relative;
+}
+
+.nav-part2 h4:hover a{
+    color:white;
+}
+
+
+/* now we work on the center part  */
+
+#center{
+    height: 65vh;
+    width:100%;
+    /* background-color: orange; */
+    /* isse our both item dono neech settle hogye h */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border:1px solid rgba(128, 128, 128, 0.23);
+    padding-bottom: 4vw;
+    /* padding-left: 1vw; */
+    /* padding-right: 1vw; */
+    font-family: neu;
+}
+
+#center h1{
+    font-size:8vw;
+    font-family: neu;
+    line-height: 10vw;
+    
+    text-align: right;
+}
+#left h3{
+    font-size: 2vw;
+    width: 30vw;
+    font-family:neu ;
+    line-height: 2vw;
+}
+
+#page1 video {
+    width:100%;
+    border-radius: 30px;
+    margin: .2vw;
+    padding-top: 10px;
+    position: relative;
+}
+
+#hero-shape{
+    position: absolute;
+    width: 46vw;
+    height: 36vw;
+    background-color:#FE320A;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    right:0;
+    top:63.5vh;
+    filter:blur(20px);
+    
+}
+
+#hero-1{
+    height:100vw;
+    width:100vw;
+    background-color:#FE320A;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    filter:blur(20px);
+    position: absolute;
+    
+}
+
+#hero-2{
+    height:100vw;
+    width:100vw;
+    background-color:#FE320A;
+    filter:blur(20px);
+    position: absolute;
+}
+#hero-3{
+    height:100vw;
+    width:100vw;
+    background:linear-gradient(#FE320A,#fe530af5);
+    filter:blur(20px);
+    position: absolute;
+    animation-name: anime1;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes anime1 {
+    from{
+        transform: translate(200%,-10%);
+    }
+    to{
+        transform: translate(-10%,50%);
+    }
+}
+
+@keyframes anime2 {
+    from{
+        transform: translate(10%,-10%);
+    }
+    to{
+        transform: translate(-10%,0%);
+    }
+}
+
+@keyframes anime3 {
+    from{
+        transform: translate(10%,-15%);
+    }
+    to{
+        transform: translate(-10%,10%);
+    }
+}
+
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    background-color:#efeae3;
+    padding:1vw;
+    position: relative;
+}
+#moving-text{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* to remove the scroll bar  */
+#moving-text::-webkit-scrollbar{
+    display:none;
+}
+.con{
+    white-space: nowrap;
+    display: inline-block;
+    /* isse jo children next line m arhe hote h vo ek he line m ajate h */
+    animation-name: move;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+#moving-text h1 {
+    
+    /* background-color: lightblue; */
+    font-size: 9vw;
+    display: inline-block;
+}
+
+#gola{
+    width:70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #FE320A;
+    display: inline-block;
+    margin:1vw 2vw;
+}
+
+/* To move the text */
+@keyframes move{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+
+#page2-bottom {
+    height: 80vh;
+    width: 100%;
+    /* background-color: aliceblue; */
+    padding: 4.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    font-family: neu;
+    z-index: 9;
+}
+
+#page2-bottom h1 {
+    font-size: 4vw;
+    width: 60%;
+    font-family: neu;
+    line-height: 4vw;
+}
+
+#bottom-part2 {
+    width: 20%;
+    /* background-color: aqua; */
+}
+
+#bottom-part2 img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+#bottom-part2 p {
+    font-family: neu;
+    font-weight: -10;
+    margin-top: 2vw;
+    font-size: 1vw;
+}
+
+#page2 #gooey{
+    width:34vw;
+    height: 30vw;
+    position: absolute;
+    background:linear-gradient(to top,#FE320A,#fead0a);
+    border-radius: 50%;
+    top:30%;
+    left:30%;
+    filter: blur(25px);
+
+    animation-name: gooey;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+
+
+/* skew trasforms the shape of object  */
+@keyframes gooey {
+    from{
+        transform: translate(10vh,-10vh) skew(0);
+    }
+    to{
+        transform: translate(-10vh,10vh) skew(-12deg);
+    }
+}
+
+#page3 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    padding: 4vw 0;
+}
+
+.elem {
+    height: 150px;
+    width: 100%;
+    position: relative;
+
+    border-bottom: 1px solid #38383864;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+}
+
+.elem h2 {
+    font-size: 3vw;
+    position: relative;
+    z-index: 9;
+}
+
+.elem .overlay {
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    transition: all ease 0.25s;
+}
+
+.elem:hover .overlay {
+    top: 0;
+}
+
+
+
+#fixed-image {
+    height: 30vw;
+    width: 24vw;
+    /* background-color: red; */
+    border-radius: 15px;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    top: 25%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+}
+
+#page4{
+    height:70vh ;
+    width:100% ;
+    background-color: #efeae3;
+    padding:10vw 2vw;
+
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    width: 30%;
+    border-left: 1px solid #aeadad;
+    padding: 0 2vw;
+}
+
+
+
+#page5{
+    height:100vh ;
+    width:100% ;
+    background-color: #effae3;
+}
+
+
+#footer{
+    position: fixed;
+    z-index:99;
+    height:105vh;
+    width:100%;
+    background-color: #000;
+    color:#fff;
+    z-index: 9;
+    bottom:0;
+    display:flex;
+    justify-content:flex-end;
+    flex-direction: column;
+    padding:1vw 3vw;
+}
+#footer h1 {
+    font-size: 23vw;
+}
+
+#footer-div {
+    height: 20vh;
+    width: 100%;
+    background-color: red;
+}
+
+#footer-bottom {
+    border-top: 1px solid #dadada;
+    height: 10vh;
+    width: 100%;
+}
